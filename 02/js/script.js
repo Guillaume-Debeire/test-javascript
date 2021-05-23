@@ -15,14 +15,14 @@ const items = ['Sunglasses', 'Suit', 'Business card', 'Jet ski'];
 
 
 
-function generateLi(parent, text) {
-    // Créer un li
-    const newLiElement = document.createElement('li');
-    // Ecrire du texte dans le li
-    newLiElement.textContent = text;
-    // Insérer le li dans le ul
-    parent.appendChild(newLiElement);
-}
+// function generateLi(parent, text) {
+//     // Créer un li
+//     const newLiElement = document.createElement('li');
+//     // Ecrire du texte dans le li
+//     newLiElement.textContent = text;
+//     // Insérer le li dans le ul
+//     parent.appendChild(newLiElement);
+// }
 
 // Cibler le ul
 const parentUlElement = document.getElementById('result');
@@ -36,13 +36,29 @@ const parentUlElement = document.getElementById('result');
 //     generateLi(parentUlElement, items[i])
 // }
 
-items.forEach(function(currentItem) {
-    generateLi(parentUlElement, currentItem);
-});
+// items.forEach(function(currentItem) {
+//     generateLi(parentUlElement, currentItem);
+// });
 
-// let inputElement = document.getElementById('input');
+let inputElement = document.getElementById('input');
 
-// let submitElement = document.getElementById('submit');
+
+let submitElement = document.getElementById('submit');
+submitElement.onclick = function() {
+    let newLiElement = document.createElement('li');
+    let newCross = document.createElement('button');
+    newCross.textContent = 'X';
+    newCross.setAttribute('class', 'delete');
+    newLiElement.textContent = inputElement.value;
+    parentUlElement.appendChild(newLiElement);
+    newLiElement.appendChild(newCross);
+    inputElement.value = '';
+}
+
+let deleteElement = document.querySelector('.delete');
+deleteElement.onclick = function() {
+    console.log('coucou')
+}
 
 // newLiElement.textContent = inputElement.textContent;
 // parentUlElement.appendChild(newLiElement);
