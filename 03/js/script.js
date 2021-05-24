@@ -22,14 +22,24 @@ const data = [
     },
 ];
 
-const characters = [];
+// const characters = [];
 
-data.forEach(function(originalCharacter) {
+// data.forEach(function(originalCharacter) {
+//     const oneCharacter = {};
+//     oneCharacter.name = originalCharacter.firstname + ' ' + originalCharacter.lastname;
+//     oneCharacter.young = originalCharacter.age < 50;
+//     characters.push(oneCharacter);
+// });
+
+const characters = data.map(function(originalCharacter) {
     const oneCharacter = {};
     oneCharacter.name = originalCharacter.firstname + ' ' + originalCharacter.lastname;
     oneCharacter.young = originalCharacter.age < 50;
-    characters.push(oneCharacter);
+    return oneCharacter;
 });
+
+console.log(data);
+console.log(characters);
 
 // for (let i = 0; i < data.length; i++) {
 //     const oneCharacter = [];
@@ -47,5 +57,5 @@ data.forEach(function(originalCharacter) {
 
 
 
-console.log(characters)
+// console.log(characters)
 

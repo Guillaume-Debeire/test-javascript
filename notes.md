@@ -4,6 +4,20 @@
 
 ### map
 
+`map` s'éxecute sur un tableau d'origine et retourne un nouveau tableau qui contiendra autant d'élements que le tableau d'origine.
+
+Chaque fois qu'on a la problématique de transposer un tableau, cad créer un tableau en fonction des valeurs d'un tableau d'origine, on pourra utiliser `map`.
+
+```js
+const numbers = [1, 2, 42, 123];
+
+function calculDouble(number) {
+    return number * 2;
+}
+
+const doubles = numbers.map(calculDouble);
+```
+
 ### filter
 
 ### find

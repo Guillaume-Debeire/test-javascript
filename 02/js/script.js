@@ -50,7 +50,7 @@ submitElement.onclick = function() {
     newCross.textContent = 'X';
     newCross.setAttribute('class', 'delete');
     newLiElement.textContent = inputElement.value;
-    parentUlElement.appendChild(newLiElement);
+    parentUlElement.appendChild(newLiElement, newCross);
     newLiElement.appendChild(newCross);
     inputElement.value = '';
 }
