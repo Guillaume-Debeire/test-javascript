@@ -24,23 +24,6 @@ const data = [
 
 // const characters = [];
 
-// data.forEach(function(originalCharacter) {
-//     const oneCharacter = {};
-//     oneCharacter.name = originalCharacter.firstname + ' ' + originalCharacter.lastname;
-//     oneCharacter.young = originalCharacter.age < 50;
-//     characters.push(oneCharacter);
-// });
-
-const characters = data.map(function(originalCharacter) {
-    const oneCharacter = {};
-    // oneCharacter.name = originalCharacter.firstname + ' ' + originalCharacter.lastname;
-    oneCharacter.name = `${originalCharacter.firstname} ${originalCharacter.lastname}`;
-    oneCharacter.young = originalCharacter.age < 50;
-    return oneCharacter;
-});
-
-console.log(characters);
-
 // for (let i = 0; i < data.length; i++) {
 //     const oneCharacter = [];
 //     oneCharacter.name = data[i].firstname + ' ' + data[i].lastname;
@@ -52,6 +35,30 @@ console.log(characters);
 //     }
 //     characters.push(oneCharacter);
 // }
+
+// data.forEach(function(originalCharacter) {
+//     const oneCharacter = {};
+//     oneCharacter.name = originalCharacter.firstname + ' ' + originalCharacter.lastname;
+//     oneCharacter.young = originalCharacter.age < 50;
+//     characters.push(oneCharacter);
+// });
+
+// const characters = data.map((originalCharacter) => {
+//     const oneCharacter = {};
+//     // oneCharacter.name = originalCharacter.firstname + ' ' + originalCharacter.lastname;
+//     oneCharacter.name = `${originalCharacter.firstname} ${originalCharacter.lastname}`;
+//     oneCharacter.young = originalCharacter.age < 50;
+//     return oneCharacter;
+// });
+
+// On pourrait aussi avoir
+const characters = data.map((originalCharacter) => ({
+    name: `${originalCharacter.firstname} ${originalCharacter.lastname}`,
+    young: originalCharacter.age < 50,
+}));
+
+console.log(characters);
+
 
 
 

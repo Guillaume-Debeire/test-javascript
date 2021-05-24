@@ -110,3 +110,68 @@ console.log(`Dans 1° ans j'aurai ${age + 10} ans`);
 
 ### Fonctions fléchées
 
+En js on peut écrire nos fonctions de 2 manières.
+
+- Déclaration de fonction
+
+```js
+function sayHello() {
+    return 'hello';
+}
+
+sayHello();
+```
+
+- Expression de fonction
+
+```js
+const sayHello = function() {
+    return 'hello';
+}
+
+sayHello();
+```
+
+Avec ES6, l'expression de fonction peut être réécrite sous forme d'expression de fonction fléchée.
+
+```js
+const sayHello = () => {
+    return 'hello';
+}
+
+sayHello();
+```
+
+Pour faire une fonction fléchée on enlève le mot function et on met à la place une grosse flèche ou fat arrow entre les parenthèses des paramètres et le corps de la fonction.
+
+il est **possible** d'alléger encore plus.
+
+- On peut omettre les accolades du corps de la fonction ET le return SI et seulement SI la seule instruction de notre fonction est un return
+
+```js
+const isOld = (age) => age > 50;
+
+isOld(40);
+```
+
+- On peut omettre les parenthèses autour du paramètre SI et seulement SI il y en a 1 et 1 seul (ni 0 ni 2 ou plus)
+
+```js
+const isOld = age => age > 50;
+
+isOld(40);
+```
+
+- Autres exemples
+
+```js
+const getFullName = (firstname, lastname) => `${firstname} ${lastname}`;
+
+getFullName('Guillaume', 'Debeire'); // Guillaume Debeire
+
+// dans le cas où on retourne directement un objet on est obligés de l'entourer de parenthèses sinon l'interpréteur ne comprend pas la signification des accolades
+const getObjet = () => ({
+    name: 'toto',
+    age: 30
+});
+```
