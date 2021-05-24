@@ -33,12 +33,12 @@ const data = [
 
 const characters = data.map(function(originalCharacter) {
     const oneCharacter = {};
-    oneCharacter.name = originalCharacter.firstname + ' ' + originalCharacter.lastname;
+    // oneCharacter.name = originalCharacter.firstname + ' ' + originalCharacter.lastname;
+    oneCharacter.name = `${originalCharacter.firstname} ${originalCharacter.lastname}`;
     oneCharacter.young = originalCharacter.age < 50;
     return oneCharacter;
 });
 
-console.log(data);
 console.log(characters);
 
 // for (let i = 0; i < data.length; i++) {

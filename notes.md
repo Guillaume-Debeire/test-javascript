@@ -72,6 +72,41 @@ const obj = {};
 obj.age = 30;
 ```
 
-### Template strings
+### Template strings / Template litterals / Littéraux de gabarits / Chaînes de charactères entre magic quotes
+
+[Doc](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Litt%C3%A9raux_gabarits)
+
+On connait les simples ou les doubles quotes pour écrire une chaîne de caractères.
+
+```js
+const prenom = 'Guillaume';
+const nom = 'Debeire';
+```
+
+On peut aussi délimiter des chaines entre ` ce qu'on appelle magic quote ou backticks
+
+```js
+const name = 'Guillaume Debeire';
+```
+
+Il y a 3 avantages :
+
+- On peut mettre des retours à la ligne
+
+```js
+const presentation = `Coucou,
+comment ça va ?`;
+```
+
+- On peut mettre des expression qui seront interprétées entre `${}`
+
+```js
+const age = 30;
+// C'est comme faire une concaténation avec + mais ainsi on a pas besoin de sortir sans arrêt de la chaine
+console.log(`Dans 1° ans j'aurai ${age + 10} ans`);
+```
+
+- Il existe un troisième avantage avec ce qu'on appelle les gabarits étiquetés, mais ça ne nous intéresse pas aujourd'hui.
 
 ### Fonctions fléchées
+
