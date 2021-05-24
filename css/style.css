@@ -1,3 +1,13 @@
 .body {
     text-align: center;
+    width: 80%;
+    margin: auto;
+}
+.box  {
+    float: left;
+    width: 5em;
+    height: 5em;
+    margin: .5em;
+    background: #ddd;
+    display: none;
 }
