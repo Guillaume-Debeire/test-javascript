@@ -20,7 +20,41 @@ const doubles = numbers.map(calculDouble);
 
 ### filter
 
+Filter sert à filtrer les valeurs d'un tableau, on obtient un nouveau tableau contenant une partie des valeurs initiales
+
+On lui passe en argument une fonction callback qui sera exécutée pour chaque valeur du tableau, elle acceptera en paramètre la valeur courante et l'index courant
+
+Pour chaque valeur du tableau d'origine, si la fonction de rappel renvoie true on garde la valeur, si on revoie false, on ne garde pas la valeur
+
+```js
+function isBig(value) {
+    return value > 20;
+}
+
+const numbers = [5, 15, 25, 35];
+
+const bigNumbers = numbers.filter(isBig);
+console.log(bigNumbers); // [25, 35]
+```
+
 ### find
+
+Find sert à trouver **une** valeur dans un tableau
+
+Comme pour les méthodes précédentes on passe une fonction callback qui accepte en paramètre la valeur courante et éventuellement l'indice courant
+
+La fonction callback doit renvoyer true ou false, dès qu'elle renvoie true pour une valeur, c'est cette valeur qui est retournée par le find
+
+```js
+function isBig(value) {
+    return value > 20;
+}
+
+const numbers = [5, 15, 25, 35];
+
+const bigNumber = numbers.find(isBig);
+console.log(bigNumber); // [25, 35]
+```
 
 ## ES6
 
