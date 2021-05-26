@@ -46,6 +46,9 @@ const data = [
 
 // };
 
-data.find((currentUser) => {
-    return currentUser.login === 'paldado';
-})
+function findUser(login, users) {
+    return users.find((currentUser) => currentUser.login === login);
+};
+
+const paldadoUser = findUser('paldado', data);
+console.log(paldadoUser);
