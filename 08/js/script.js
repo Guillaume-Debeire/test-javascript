@@ -41,5 +41,13 @@ const animaux = [
     }
 ];
 
-const [duck, cat, lion, sheep] = animaux;
-console.log(duck)
+// const canard = animaux[0];
+// const chat = animaux[1];
+// const lion = animaux[2];
+// const muton = animaux[3];
+
+// Quand on décompose un tableau ce qui compte c'est l'ordre
+const [canard, chat, lion, mouton] = animaux;
+
+// On est pas obligés de tout récupérer on pourrait prendre uniquement la première valeur par exemple
+const [canard] = animaux;
