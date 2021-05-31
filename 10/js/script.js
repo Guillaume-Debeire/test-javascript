@@ -25,8 +25,7 @@ const user = {
     lang: 'fr',
 };
 
-function sayHelloToUser(user) {
-    const {firstname, lastname} = user;
+function sayHelloToUser({ firstname, lastname}) {
     console.log(`Hello ${firstname} ${lastname}`);
 }
 
@@ -37,3 +36,17 @@ sayHelloToUser({
 });
 
 sayHelloToUser(user);
+
+const France = {
+    language: 'french',
+    capital: 'paris',
+    hab: 7000000,
+    surface: 100000,
+}
+
+function calculDensity({ hab, surface }) {
+    return country.hab / country.surface;
+};
+
+calculDensity(France);
+console.log(calculDensity(France ))
