@@ -6,6 +6,7 @@ Nous allons afire du "currying", c'est à dire préparer une fonction qui va nou
 Objectifs
 ---------
 - Faire une fonction : sayHelloToUser
+- elle prend en paramètre le nom du user
 - elle retourne une fonction
 - la fonction retournée doit prendre un paramètre `lang`
 
@@ -38,14 +39,43 @@ const users = [
     },
 ];
 
-function sayHelloToUser({ firstname, lastname }) {
-    console.log(firstname, lastname);
-    return function() {
-        console.log('je teste');
+// function sayHelloToUser({ firstname, lastname }) {
+//     return function(lang) {
+//         switch (lang) {
+//             case 'es':
+//                 console.log(`Ola ${firstname} ${lastname}`);
+//                 break;
+//             case 'en':
+//                 console.log(`Hello ${firstname} ${lastname}`);
+//                 break;
+//             default:
+//                 console.log(`Bonjour ${firstname} ${lastname}`);
+//         }
+//     };
+// }
+
+const sayHelloToUser = ({ firstname, lastname }) => {
+    (lang) => {
+        switch (lang) {
+            case 'es':
+                console.log(`Ola ${firstname} ${lastname}`);
+                break;
+            case 'en':
+                console.log(`Hello ${firstname} ${lastname}`);
+                break;
+            default:
+                console.log(`Bonjour ${firstname} ${lastname}`);
+        }
     };
 }
 
 const sayHelloToJohn = sayHelloToUser(users[0]);
 const sayHelloToToto = sayHelloToUser(users[1]);
 
-sayHelloToJohn(); 
+sayHelloToJohn('es');
+sayHelloToJohn('en');
+sayHelloToToto();
+
+// La currification/currying consiste à ne pas écrire une fonction à plusieurs paramètres, mais plutot plusieurs fonctions à 1 paramètre, chaque fonction en retournant une autre.
+
+
